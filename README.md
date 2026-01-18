@@ -7,6 +7,12 @@
 [JavaDoc for the labs is hosted here.](https://bertie-wheen.github.io/us-dsa-2025-2026)
 
 
+## Notes
+
+
+1. [Getting Started](https://github.com/bertie-wheen/us-dsa-2025-2026/tree/trunk/src/main/java/dsa/lab01)
+
+
 ## Setup
 
 

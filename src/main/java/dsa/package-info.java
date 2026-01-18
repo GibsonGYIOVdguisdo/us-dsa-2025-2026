@@ -47,19 +47,19 @@
  * </ul>
  * These labs are structured into
  * <a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-7.html">packages</a>,
- * one package per lab (e.g. {@code dsa.lab01} for lab 1). All are subpackages
+ * one package per lab (e.g. {@link dsa.lab01} for lab 1). All are subpackages
  * of the top-level {@link dsa} package, and each is further structured into
  * subpackages.
  * <p>
  * Each lab contains an {@code exercises} subpackage (e.g.
- * {@code dsa.lab01.exercises}) that contains one or more exercises. Each
+ * {@link dsa.lab01.exercises}) that contains one or more exercises. Each
  * exercise is a partially-implemented
  * <a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html">class</a>
  * with one or more {@code TODO}s that you are expected to fill in in order to
  * complete the implementation.
  * <p>
  * Model solutions for each of the exercises are provided in the
- * {@code solutions} subpackage (e.g. {@code dsa.lab01.solutions}).
+ * {@code solutions} subpackage (e.g. {@link dsa.lab01.solutions}).
  * <p>
  * Some labs also include a {@code base} subpackage that contains given code
  * that is needed for the exercises, and thus - though these files aren't
@@ -72,8 +72,11 @@
  * take, what they're supposed to do and what they return.
  * <p>
  * The most commonly-provided {@code base} code are interfaces defining abstract
- * data types (such as in {@code dsa.lab01.base.StringContainer}, as exercises
+ * data types (such as in {@link dsa.lab01.base.StringContainer}, as exercises
  * will often be to implement various concrete data types as subclasses of these
- * ADTs (e.g. as in {@code dsa.lab01.exercises.StringArray}).
+ * ADTs (e.g. as in {@link dsa.lab01.exercises.StringArray}).
+ * <ul>
+ * <li>{@linkplain dsa.lab01 Lab 1}</li>
+ * </ul>
  */
 package dsa;

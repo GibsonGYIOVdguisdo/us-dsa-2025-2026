@@ -1,5 +1,8 @@
 package dsa;
 
+import dsa.lab01.exercises.Array;
+import dsa.lab01.exercises.StringArray;
+
 public class Main
 {
 
@@ -33,6 +36,14 @@ public class Main
      |   System.out.println(myDataStructure.toDebugString());                 |
      | to get a representation of the state of the data structure's fields.   |
      *------------------------------------------------------------------------*/
+
+    Array<StringArray> array = new Array<>(
+      new StringArray("a", "b", "c"),
+      new StringArray());
+
+    System.out.println(array);
+    System.out.println();
+    System.out.println(array.toDebugString());
   }
 
 }
