@@ -210,5 +210,5 @@ Interfaces can also extend other interfaces which in turn extend other
 interfaces, and so on. We will see examples of these throughout this class.
 
 This covers all the Java concepts we'll need for most of the rest of the module.
-You're now ready to start! On Thursday, after the last lab session, you will be
-able to access `lab02`, which you should start working on as soon as possible.
+You're now ready to start! You can already access `lab02`, which you should
+start working on as soon as possible following Lectures 1 and 2 in Week 1.
