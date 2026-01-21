@@ -37,6 +37,8 @@ What to do at the start of EVERY lab session (if using lab computers):
     * Choose `Amazon Corretto` as the vendor, and click `Download`
     * Click `Apply`, then `OK` to close the project structure dialog
 
+Open the `src\main\java\dsa\lab01` folder.
+
 
 ## Interfaces
 
