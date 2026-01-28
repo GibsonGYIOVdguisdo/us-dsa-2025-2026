@@ -10,25 +10,28 @@ programming concepts in Java that we'll need for this module.
 ## Setup
 
 
-What to do at the start of EVERY lab session (if using lab computers):
+What to do at the start of EVERY lab session:
 
 * Open the Software Hub and launch:
   * Git for Windows
   * IntelliJ Community Edition
 * Open PowerShell and run:
-  * If lab 1:
-    * `N:`
-    * `git clone https://github.com/bertie-wheen/us-dsa-2025-2026 dsa`
-  * Else (labs 2 onwards):
-    * `cd N:/dsa`
-    * `git pull`
+  * If you have never cloned this repository before:
+    * `N:` and `Enter` if using lab computers, otherwise pick a location you
+      like
+    * `git clone https://github.com/bertie-wheen/us-dsa-2025-2026 dsa` and `Enter`
+  * Else:
+    * `cd N:/dsa` then `Enter` if using lab computer, or `cd` to the location
+      where you cloned the repository before
+    * `git pull` then `Enter`
     * If you get an error "fatal: detected dubious ownership in
       repository ..." (which you likely will):
       * `git config --global --add safe.directory '%(prefix)///smbhome.uscs.susx.ac.uk/<username>/dsa'`
-        (where `<username>` is your username)
-      * `git pull`
+        then `Enter` (where `<username>` is your username)
+      * `git pull` then `Enter`
 * Open IntelliJ IDEA and:
-  * Open `N:/dsa` as a project
+  * Open `N:/dsa` as a project if using lab computers, or the folder where you
+    cloned your repository
   * In the menu, select `File -> Project Structure` (or press
     `Ctrl+Alt+Shift+S`)
   * Select `Project` in the left sidebar (if it isn't already selected)
