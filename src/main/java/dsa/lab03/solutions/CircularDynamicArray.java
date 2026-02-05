@@ -14,7 +14,7 @@ import java.util.Arrays;
  * Dynamic operations only rarely reallocate a new array.
  * <p>
  * Improves on non-circular dynamic arrays' efficiencies with
- * {@link #insertFirst(Item)} and {@link #removeFirst()}
+ * {@link #insertFirst(Object)} and {@link #removeFirst()}
  * having (amortised) asymptotic complexity O(1).
  *
  * @param <Item> the item type
