@@ -13,7 +13,7 @@ import java.util.Arrays;
  * Dynamic operations only rarely reallocate a new array.
  * <p>
  * Improves on static arrays' efficiencies with
- * {@link #insertLast(Item)} and {@link #removeLast()}
+ * {@link #insertLast(Object)} and {@link #removeLast()}
  * having (amortised) asymptotic complexity O(1).
  *
  * @param <Item> the item type
