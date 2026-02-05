@@ -1,0 +1,39 @@
+package dsa.lab03.exercises;
+
+import dsa.lab03.base.StackTests;
+import dsa.lib.utils.TestClassUtils;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.extension.ParameterResolver;
+import org.junit.jupiter.api.extension.RegisterExtension;
+
+@DisplayName("ArrayStack")
+public class ArrayStackTests
+{
+
+  @RegisterExtension
+  static final ParameterResolver classResolver =
+    TestClassUtils.resolver(ArrayStack.class);
+
+
+  @Nested
+  public class Push
+    implements StackTests.Push
+  {
+  }
+
+
+  @Nested
+  public class Top
+    implements StackTests.Top
+  {
+  }
+
+
+  @Nested
+  public class Pop
+    implements StackTests.Pop
+  {
+  }
+
+}
