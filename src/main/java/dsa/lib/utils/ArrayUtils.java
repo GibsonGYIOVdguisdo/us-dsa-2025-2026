@@ -7,8 +7,13 @@ import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.stream.Stream;
 
-public class ArrayUtils
+public final class ArrayUtils
 {
+
+  private ArrayUtils()
+  {
+  }
+
 
   @SuppressWarnings("unchecked")
   public static <T> T[] make(int size)

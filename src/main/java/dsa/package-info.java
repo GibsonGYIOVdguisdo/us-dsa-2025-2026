@@ -10,7 +10,7 @@
  *     </ul></li>
  * <li>Open PowerShell and run:
  *     <ul>
- *     <li>If lab 1:</li>
+ *     <li>If lab 1:
  *         <ul>
  *         <li>{@code N:}</li>
  *         <li>{@code git clone https://github.com/bertie-wheen/us-dsa-2025-2026 dsa}</li>
