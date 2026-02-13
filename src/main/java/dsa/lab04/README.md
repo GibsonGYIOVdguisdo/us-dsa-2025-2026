@@ -118,8 +118,11 @@ node so `insertLast(item)` takes O(1) time), or you use the `StaticArray
 static arrays of the correct capacity in O(n) time and we used `itemL.set` 
 and `itemsR.set` which take O(1) time per item each.
 
+
 ## Exercise 2: Searching
 
+
+***WARNING***: do this exercise only after having followed Lecture 7, in Week 4.
 
 Next, open and inspect `lab04\exercises\BinarySearcher.java`. For once, this
 class doesn't implement any interface! We use it to implement in Java the binary
@@ -177,10 +180,10 @@ want the *key* of this object, you can call `items.get(i).key()`; if you want
 its *value*, call instead `items.get(i).value()`. (`key()` and `value()` are
 methods defined in the class `MapItem<Key, Value>`.)
 
-You will see that there is only one method for you to implement: `indexOf
-(key)`. This method is *not* in the `Map<Key, Value>` interface, 
-but it contains all the logic of all the other methods (`find(key)`, `insert
-(item)`, `remove(key)`), which are already implemented and use it. 
+You will see that there is only one method for you to implement: `indexOf(key)`.
+This method is *not* in the `Map<Key, Value>` interface, 
+but it contains all the logic of all the other methods (`find(key)`, 
+`insert(item)`, `remove(key)`), which are already implemented and use it. 
 `indexOf(key)` takes a key as input and:
 
 * if there is an item `item` currently stored in the map whose key coincides 
