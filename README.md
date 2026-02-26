@@ -15,6 +15,7 @@
 3. [Dynamic Arrays, Stacks & Queues](https://github.com/bertie-wheen/us-dsa-2025-2026/tree/trunk/src/main/java/dsa/lab03)
 4. [Sorting, Searching & Maps](https://github.com/bertie-wheen/us-dsa-2025-2026/tree/trunk/src/main/java/dsa/lab04)
 5. [Ordered Maps, Hashing & Chaining](https://github.com/bertie-wheen/us-dsa-2025-2026/tree/trunk/src/main/java/dsa/lab05)
+6. [Probing & Binary Trees](https://github.com/bertie-wheen/us-dsa-2025-2026/tree/trunk/src/main/java/dsa/lab06)
 
 
 ## Setup
