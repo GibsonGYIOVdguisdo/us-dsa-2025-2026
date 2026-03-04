@@ -160,34 +160,39 @@ public class ProbingHashMap<Key, Value>
   @Override
   public void insert(MapItem<Key, Value> newItem)
   {
-    // TODO: Implement ProbingHashMap.insert(MapItem newItem)
-    boolean isInserted = false;
-
-    while (!isInserted)
-    {
-      int index = this.hashFunction.hash(newItem.key());
-      while (index < this.items.length && this.items[index] != null && !this.items[index].equals(this.REMOVED))
-      {
-        index++;
-      }
-      if (index >= this.items.length)
-      {
-        this.resize(this.items.length * 2);
-        continue;
-      }
-
-      if (this.items[index] != null){
-        this.size++;
-      }
-
-      this.items[index] = newItem;
-
-      isInserted = true;
+    if (this.items.length == 0){
+      this.resize(1);
     }
 
-    if ( (float) this.size / this.items.length > this.maxLoadFactor){
+    int index = this.hashFunction.hash(newItem.key());
+    while (
+      this.items[index] != null &&
+      !this.items[index].equals(this.REMOVED) &&
+      this.items[index].key() != newItem.key()
+    ){
+      index = (index + 1) % this.items.length;
+    }
+
+    // Continue checking non empty positions to see if key already exists
+    int indexToCheck = index;
+    while (this.items[indexToCheck] != null){
+      if (this.items[indexToCheck].key() == newItem.key()){
+        index = indexToCheck;
+        break;
+      }
+      indexToCheck = (indexToCheck + 1) % this.items.length;
+    }
+
+    if (this.items[index] == null || this.items[index] == this.REMOVED){
+      this.size++;
+    }
+
+    this.items[index] = newItem;
+
+    if ((float) this.size / (float) this.items.length > this.maxLoadFactor){
       this.resize(this.items.length * 2);
     }
+
   }
 
 
@@ -195,10 +200,19 @@ public class ProbingHashMap<Key, Value>
   public MapItem<Key, Value> find(Key key)
     throws NoSuchElementException
   {
-    // TODO: Implement ProbingHashMap.find(Key key)
-    return null;
-    // NOTE: If you find that no item has the given key, then write:
-    //       throw new NoSuchElementException();
+    int index = 0;
+    while (
+      this.items.length > index &&
+      (this.items[index] == null  || !this.items[index].key().equals(key))
+    ){
+      index++;
+    }
+
+    if (index == this.items.length){
+      throw new NoSuchElementException();
+    }
+
+    return this.items[index];
   }
 
 
