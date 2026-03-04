@@ -200,15 +200,20 @@ public class ProbingHashMap<Key, Value>
   public MapItem<Key, Value> find(Key key)
     throws NoSuchElementException
   {
-    int index = 0;
-    while (
-      this.items.length > index &&
-      (this.items[index] == null  || !this.items[index].key().equals(key))
-    ){
-      index++;
+    if (this.items.length == 0){
+      throw new NoSuchElementException();
     }
 
-    if (index == this.items.length){
+    int index = this.hashFunction.hash(key);
+
+    while (
+      this.items[index] != null &&
+      !this.items[index].key().equals(key)
+    ){
+      index = (index + 1) % this.items.length;
+    }
+
+    if (this.items[index] == null || this.items[index].key() != key){
       throw new NoSuchElementException();
     }
 
@@ -220,15 +225,19 @@ public class ProbingHashMap<Key, Value>
   public MapItem<Key, Value> remove(Key key)
     throws NoSuchElementException
   {
-    int index = 0;
+    if (this.items.length == 0){
+      throw new NoSuchElementException();
+    }
+    
+    int index = this.hashFunction.hash(key);
     while (
-      this.items.length > index &&
-        (this.items[index] == null  || !this.items[index].key().equals(key))
+      this.items[index] != null &&
+        !this.items[index].key().equals(key)
     ){
-      index++;
+      index = (index + 1) % this.items.length;
     }
 
-    if (index < this.items.length){
+    if (this.items[index] != null && this.items[index].key().equals(key)){
       MapItem<Key, Value> removed = this.items[index];
       this.items[index] = this.REMOVED;
       this.size--;
