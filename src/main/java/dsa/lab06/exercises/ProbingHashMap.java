@@ -220,10 +220,22 @@ public class ProbingHashMap<Key, Value>
   public MapItem<Key, Value> remove(Key key)
     throws NoSuchElementException
   {
-    // TODO: Implement ProbingHashMap.remove(Key key)
-    return null;
-    // NOTE: If you find that no item has the given key, then write:
-    //       throw new NoSuchElementException();
+    int index = 0;
+    while (
+      this.items.length > index &&
+        (this.items[index] == null  || !this.items[index].key().equals(key))
+    ){
+      index++;
+    }
+
+    if (index < this.items.length){
+      MapItem<Key, Value> removed = this.items[index];
+      this.items[index] = this.REMOVED;
+      this.size--;
+      return removed;
+    }
+
+    throw new NoSuchElementException();
   }
 
 
