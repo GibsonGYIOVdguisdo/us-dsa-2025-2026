@@ -161,6 +161,33 @@ public class ProbingHashMap<Key, Value>
   public void insert(MapItem<Key, Value> newItem)
   {
     // TODO: Implement ProbingHashMap.insert(MapItem newItem)
+    boolean isInserted = false;
+
+    while (!isInserted)
+    {
+      int index = this.hashFunction.hash(newItem.key());
+      while (index < this.items.length && this.items[index] != null && !this.items[index].equals(this.REMOVED))
+      {
+        index++;
+      }
+      if (index >= this.items.length)
+      {
+        this.resize(this.items.length * 2);
+        continue;
+      }
+
+      if (this.items[index] != null){
+        this.size++;
+      }
+
+      this.items[index] = newItem;
+
+      isInserted = true;
+    }
+
+    if ( (float) this.size / this.items.length > this.maxLoadFactor){
+      this.resize(this.items.length * 2);
+    }
   }
 
 
