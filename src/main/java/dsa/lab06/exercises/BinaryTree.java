@@ -815,7 +815,13 @@ public class BinaryTree<Item>
      */
     public void printPostOrder()
     {
-      // TODO: Implement BinaryTree.Node.printPostOrder()
+      if (this.hasLeft()){
+        this.left.printPostOrder();
+      }
+      if (this.hasRight()){
+        this.right.printPostOrder();
+      }
+      System.out.println(this.item);
     }
 
 
