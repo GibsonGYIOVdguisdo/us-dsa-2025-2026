@@ -740,8 +740,8 @@ public class BinaryTree<Item>
     {
       int leftHeight = this.hasLeft() ? this.left.height : -1;
       int rightHeight = this.hasRight() ? this.right.height : -1;
-      // TODO: Implement BinaryTree.Node.calculateHeight()
-      return 0;
+
+      return Math.max(leftHeight, rightHeight) + 1;
     }
 
 
