@@ -707,8 +707,13 @@ public class BinaryTree<Item>
      */
     public int level()
     {
-      // TODO: Implement BinaryTree.Node.level()
-      return 0;
+      Node<Item> currentNode = this;
+      int level = 0;
+      while (currentNode.hasParent()){
+        currentNode = currentNode.parent;
+        level++;
+      }
+      return level;
     }
 
 
