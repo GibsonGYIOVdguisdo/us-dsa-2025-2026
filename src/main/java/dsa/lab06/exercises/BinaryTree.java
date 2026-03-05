@@ -779,7 +779,13 @@ public class BinaryTree<Item>
      */
     public void printPreOrder()
     {
-      // TODO: Implement BinaryTree.Node.printPreOrder()
+      System.out.println(this.item);
+      if (this.hasLeft()){
+        this.left.printPreOrder();
+      }
+      if (this.hasRight()){
+        this.right.printPreOrder();
+      }
     }
 
 
