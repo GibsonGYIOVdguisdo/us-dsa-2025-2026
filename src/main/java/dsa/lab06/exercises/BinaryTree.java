@@ -724,8 +724,7 @@ public class BinaryTree<Item>
     {
       int leftSize = this.hasLeft() ? this.left.size : 0;
       int rightSize = this.hasRight() ? this.right.size : 0;
-      // TODO: Implement BinaryTree.Node.calculateSize()
-      return 0;
+      return leftSize + 1 + rightSize;
     }
 
 
