@@ -228,7 +228,7 @@ public class ProbingHashMap<Key, Value>
     if (this.items.length == 0){
       throw new NoSuchElementException();
     }
-    
+
     int index = this.hashFunction.hash(key);
     while (
       this.items[index] != null &&

@@ -58,8 +58,7 @@ public class Array<Item>
   @Override
   public int size()
   {
-    // TODO: Implement Array.size()
-    return 0;
+    return this.items.length;
   }
 
 
