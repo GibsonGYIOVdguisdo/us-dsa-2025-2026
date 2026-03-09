@@ -155,8 +155,22 @@ public class StaticArray<Item>
       throw new IndexOutOfBoundsException();
     }
 
-    // TODO: Implement StaticArray.remove(int index)
-    return null;
+    Item[] new_array = (Item[]) new Object[this.items.length - 1];
+    Item removed_item = this.items[0];
+
+
+    for (int i = 0; i < this.items.length; i++){
+      if (i == index) {
+        removed_item = this.items[i];
+        continue;
+      }
+      int current_index = i > index ? i - 1 : i;
+      new_array[current_index] = this.items[i];
+    }
+
+    this.items = new_array;
+
+    return removed_item;
   }
 
 }
