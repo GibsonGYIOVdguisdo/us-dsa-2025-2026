@@ -133,8 +133,15 @@ public class StaticArray<Item>
     {
       throw new IndexOutOfBoundsException();
     }
+    Item[] new_array = (Item[]) new Object[this.items.length + 1];
 
-    // TODO: Implement StaticArray.insert(int index, Item item)
+    new_array[index] = item;
+    for (int i = 0; i < this.items.length; i++){
+      int current_index = i < index ? i : i + 1;
+      new_array[current_index] = this.items[i];
+    }
+
+    this.items = new_array;
   }
 
 
