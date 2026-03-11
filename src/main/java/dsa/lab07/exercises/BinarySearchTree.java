@@ -316,28 +316,25 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value>
         this.item = item;
         return this;
       }
+
+      Node<Key, Value> newNode = new Node<>(this, this.tree, null, item, null);;
       if (item.key().compareTo(this.item.key()) > 0){
         if (this.right != null) {
           return this.right.insert(item);
         }
 
-        Node<Key, Value> newNode =
-          new Node<>(this, this.tree, null, item, null);
         this.right = newNode;
-        this.tree.size++;
-        return newNode;
       }
+
       if (item.key().compareTo(this.item.key()) < 0){
         if (this.left != null) {
           return this.left.insert(item);
         }
-        Node<Key, Value> newNode =
-          new Node<>(this, this.tree, null, item, null);
         this.left = newNode;
-        this.tree.size++;
-        return newNode;
       }
-      return null;
+
+      this.tree.size++;
+      return newNode;
     }
 
 
