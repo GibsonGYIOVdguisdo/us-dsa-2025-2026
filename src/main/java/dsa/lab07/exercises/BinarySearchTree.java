@@ -283,9 +283,17 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value>
     public Node<Key, Value> findNode(Key key)
       throws NoSuchElementException
     {
-      // TODO: Implement BinarySearchTree.Node.findNode(Key key)
-      // NOTE: Should be implemented using recursive calls on subtrees.
-      return null;
+      if (key.compareTo(this.item.key()) == 0){
+        return this;
+      }
+      if (key.compareTo(this.item.key()) > 0 && this.right != null){
+        return this.right.findNode(key);
+      }
+      if (key.compareTo(this.item.key()) < 0 && this.left != null){
+        return this.left.findNode(key);
+      }
+
+      throw new NoSuchElementException();
     }
 
 
