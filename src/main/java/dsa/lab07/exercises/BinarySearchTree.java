@@ -353,9 +353,32 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value>
      */
     public Node<Key, Value> remove()
     {
-      // TODO: Implement BinarySearchTree.Node.remove()
-      // NOTE: remove() works very differently to findNode() and insert().
-      return null;
+      Node<Key, Value> successor;
+      if (this.left != null || this.right != null){
+        if (this.left != null){
+          successor = this.left.maxNode();
+        }
+        else {
+          successor = this.right.minNode();
+        }
+
+        this.item = successor.item;
+        return successor.remove();
+      }
+      else if (this.parent != null){
+        if (this.parent.left.equals(this)){
+          this.parent.left = null;
+        }
+        else{
+          this.parent.right = null;
+        }
+      }
+      else {
+        this.tree.root = null;
+      }
+      this.tree.size--;
+
+      return this;
     }
 
 
@@ -398,8 +421,13 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value>
      */
     public Node<Key, Value> minNode()
     {
-      // TODO: Implement BinarySearchTree.Node.minNode()
-      return null;
+      Node<Key, Value> node = this;
+
+      while (node.left != null){
+        node = node.left;
+      }
+
+      return node;
     }
 
 
@@ -410,8 +438,13 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value>
      */
     public Node<Key, Value> maxNode()
     {
-      // TODO: Implement BinarySearchTree.Node.maxNode()
-      return null;
+      Node<Key, Value> node = this;
+
+      while (node.right != null){
+        node = node.right;
+      }
+
+      return node;
     }
 
 
