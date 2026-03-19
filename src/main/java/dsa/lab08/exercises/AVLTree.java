@@ -179,7 +179,26 @@ public class AVLTree<Key extends Comparable<Key>, Value>
     //   ┆ a ┆           ┆ b ┆
     //   ╰╌╌╌╯           ╰╌╌╌╯
 
-    // TODO: Implement AVLTree.rotateC(Node node)
+    Node<Key, Value> p = z.parent;
+    y.parent = p;
+    if (p == null){
+      this.root = y;
+    }
+    else if (p.left != null && p.left.equals(z)){
+      p.left = y;
+    }
+    else {
+      p.right = y;
+    }
+
+    z.left = b;
+    if (b != null)
+    {
+      b.parent = z;
+    }
+    y.right = z;
+    z.parent = y;
+
     // NOTE: You will need to do a LOT of link juggling!
     // NOTE: Expect to write approx 10+ lines.
 
@@ -245,9 +264,26 @@ public class AVLTree<Key extends Comparable<Key>, Value>
     //                   ┆ b ┆           ┆ c ┆
     //                   ╰╌╌╌╯           ╰╌╌╌╯
 
-    // TODO: Implement AVLTree.rotateA(Node node)
     // NOTE: This is very similar to rotateC.
     //       (Just swap left for right, and right for left.)
+    Node<Key, Value> p = y.parent;
+    z.parent = p;
+    if (p == null){
+      this.root = z;
+    }
+    else if (p.left != null && p.left.equals(y)){
+      p.left = z;
+    } else {
+      p.right = z;
+    }
+    z.left = y;
+    y.parent = z;
+    y.right = b;
+    if (b != null){
+      b.parent = y;
+    }
+
+
 
     //           ╭╌╌╌╮
     //           ┆ p ┆
@@ -289,16 +325,29 @@ public class AVLTree<Key extends Comparable<Key>, Value>
     int balanceFactor = this.balanceFactor(node);
     if (balanceFactor == -2)
     {
-      // TODO: Implement AVLTree.rebalance(Node node)
-      // NOTE: There are two cases to consider here!
+      Node<Key, Value> x = node;
+      Node<Key, Value> y = node.left;
+
+      if (this.balanceFactor(y) == 1)
+      {
+        this.rotateA(y);
+      }
+      this.rotateC(x);
+
 
       return true;
     }
     if (balanceFactor == 2)
     {
-      // TODO: Implement AVLTree.rebalance(Node node)
       // NOTE: There are also two more cases to consider here!
       // NOTE: Remember, there are four total cases.
+      Node<Key, Value> x = node;
+      Node<Key, Value> y = node.right;
+      if (this.balanceFactor(y) == -1)
+      {
+        this.rotateC(y);
+      }
+      this.rotateA(x);
 
       return true;
     }
