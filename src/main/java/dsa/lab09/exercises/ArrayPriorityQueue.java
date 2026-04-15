@@ -112,7 +112,7 @@ public class ArrayPriorityQueue<Priority extends Comparable<Priority>, Item>
   @Override
   public void insert(PriorityQueueItem<Priority, Item> item)
   {
-    // TODO: Implement ArrayPriorityQueue.insert(PrioritisedItem prioritisedItem)
+    this.items.insert(this.items.size(), item);
   }
 
 
