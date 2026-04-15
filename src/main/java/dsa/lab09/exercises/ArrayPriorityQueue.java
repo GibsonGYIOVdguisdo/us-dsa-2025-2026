@@ -95,8 +95,17 @@ public class ArrayPriorityQueue<Priority extends Comparable<Priority>, Item>
       return null;
     }
 
-    // TODO: Implement ArrayPriorityQueue.max()
-    return null;
+    PriorityQueueItem<Priority, Item> max = this.items.get(0);
+
+    for (int i = 0; i < this.items.size(); i++){
+      PriorityQueueItem<Priority, Item> current = this.items.get(i);
+
+      if (current.compareTo(max) > 0){
+        max = current;
+      }
+    }
+
+    return max;
   }
 
 
