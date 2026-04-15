@@ -102,7 +102,15 @@ public class SortedArrayPriorityQueue<Priority extends Comparable<Priority>, Ite
   @Override
   public void insert(PriorityQueueItem<Priority, Item> item)
   {
-    // TODO: Implement SortedArrayPriorityQueue.insert(PrioritisedItem prioritisedItem)
+
+    for (int i = 0; i < this.items.size(); i++){
+        if (this.items.get(i).compareTo(item) >= 0){
+          this.items.insert(i, item);
+          return;
+        }
+    }
+    this.items.insert(this.items.size(), item);
+
   }
 
 
