@@ -114,8 +114,11 @@ public class SortedArrayPriorityQueue<Priority extends Comparable<Priority>, Ite
       return null;
     }
 
-    // TODO: Implement SortedArrayPriorityQueue.removeMax()
-    return null;
+    PriorityQueueItem<Priority, Item> max = this.items.last();
+
+    this.items.remove(this.items.size() - 1);
+
+    return max;
   }
 
 
