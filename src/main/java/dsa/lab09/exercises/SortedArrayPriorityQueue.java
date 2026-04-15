@@ -95,8 +95,7 @@ public class SortedArrayPriorityQueue<Priority extends Comparable<Priority>, Ite
       return null;
     }
 
-    // TODO: Implement SortedArrayPriorityQueue.max()
-    return null;
+    return this.items.last();
   }
 
 
