@@ -144,8 +144,7 @@ public class DirectedGraph<Vertex, Weight>
     //       degree, i.e. deg^+, the number of outgoing edges (or, equivalently,
     //       the number of neighbouring vertices that we can get to in one step
     //       from the given vertex).
-    // TODO: Implement DirectedGraph.degree(Vertex vertex)
-    return 0;
+    return this.adjacencyLists.get(vertex).size();
   }
 
 
