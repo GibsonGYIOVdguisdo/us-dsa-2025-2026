@@ -127,10 +127,12 @@ public class DirectedGraph<Vertex, Weight>
     {
       return false;
     }
-
-    // NOTE: Check whether the edge actually is an edge in this graph or not.
-    // NOTE: Think about where it would be stored if it were, and check there.
-    // TODO: Implement DirectedGraph.contains(Edge edge)
+    for (Edge<Vertex, Weight> edge1 :
+      this.adjacencyLists.get(edge.source()).items()){
+      if (edge1 == edge){
+        return true;
+      }
+    }
     return false;
   }
 
