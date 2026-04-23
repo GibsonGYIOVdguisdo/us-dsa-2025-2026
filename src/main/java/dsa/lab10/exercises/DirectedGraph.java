@@ -111,10 +111,7 @@ public class DirectedGraph<Vertex, Weight>
   @Override
   public boolean contains(Vertex vertex)
   {
-    // NOTE: We store an adjacency list for each vertex in the graph, so if the
-    //       vertex is in the graph, it will be in our adjacency lists map.
-    // TODO: Implement DirectedGraph.contains(Vertex vertex)
-    return false;
+    return this.adjacencyLists.containsKey(vertex);
   }
 
 
