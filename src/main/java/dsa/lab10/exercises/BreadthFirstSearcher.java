@@ -69,7 +69,19 @@ public class BreadthFirstSearcher
     //       already found paths to them - add information about this path we've
     //       found to them to the map, and also add them to the frontier so that
     //       we'll later also check their neighbours.
-    // TODO: Implement BreadthFirstSearcher.search(DirectedGraph graph, Vertex source)
+    while (!frontier.isEmpty()){
+      Vertex current = frontier.dequeue();
+      for (Vertex vertex : graph.neighbours(current)){
+        if (paths.containsKey(vertex)){
+          continue;
+        }
+
+        frontier.enqueue(vertex);
+        Path<Vertex, Integer> path = new Path<>(current,
+          paths.get(current).distance() + 1);
+        paths.insert(vertex, path);
+      }
+    }
 
     // NOTE: Return the map of paths to all connected vertices.
     return paths;
