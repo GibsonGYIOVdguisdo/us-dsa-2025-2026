@@ -164,7 +164,11 @@ public class DirectedGraph<Vertex, Weight>
     // NOTE: Similarly to contains(Edge edge), consider _where_ such an edge
     //       would be stored, and then look for it there.
     // NOTE: If you don't find it there, then return null.
-    // TODO: Implement DirectedGraph.edge(Vertex source, Vertex target)
+    for (Edge<Vertex, Weight> edge : this.adjacencyLists.get(source).items()){
+      if (edge.target() == target){
+        return edge;
+      }
+    }
     return null;
   }
 
