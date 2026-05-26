@@ -20,6 +20,7 @@
 8. [AVL Trees](https://github.com/bertie-wheen/us-dsa-2025-2026/tree/trunk/src/main/java/dsa/lab08)
 9. [Priority Queues & Binary Heaps](https://github.com/bertie-wheen/us-dsa-2025-2026/tree/trunk/src/main/java/dsa/lab09)
 10. [Graphs & BFS](https://github.com/bertie-wheen/us-dsa-2025-2026/tree/trunk/src/main/java/dsa/lab10)
+11. [DFS, Topological Sorting & DAG Relaxation](https://github.com/bertie-wheen/us-dsa-2025-2026/tree/trunk/src/main/java/dsa/lab11)
 
 
 ## Setup
